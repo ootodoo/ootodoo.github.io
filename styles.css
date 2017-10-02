@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  padding-bottom: 40px;
+  background-color: black;
+}
+
+#pressed {
+  border-color: rgb(0,255,0) rgb(0,255,0) rgb(0,255,0) rgb(0,255,0);
+}
+
+#underline {
+  color: rgb(0,255,0);
+}
+
+#bold {
+  font-weight: bold;
+}
+
+#name {
+  font-size: 18px;
+  margin: 3px 4px 5px 4px;
+}
+
+.nav-work{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  overflow: auto;
+  top: 12px;
+  buttom: 0;
+  left: 85%;
+  position: fixed;
+  display: inline-block;
+  width: 10%;
+}
+
+.nav-work a{
+  text-decoration: none;
+  color: white;
+}
+
+.nav-work a:link, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-work a:hover {
+  text-decoration: none;
+  color: rgb(255,255,0);
+}
+
+.nav-work p {
+  margin: 3px 0 5px 0;
+}
+
+.nav {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: yellow;
+  overflow: auto;
+  top: 12px;
+  buttom: 0;
+  left: 12px;
+  position: fixed;
+}
+
+.nav a{
+  text-decoration: none;
+  color: white;
+}
+
+.nav a:link, a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  color: rgb(255,255,0);
+}
+
+.nav p {
+  margin: 3px 0 5px 0;
+  text-indent: 10px;
+}
+
+.content {
+  font-size: 16px;
+  color: white;
+  margin: 0 0 0 0px;
+  padding-top: 12px;
+  padding-left: 145px;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+#content-work{
+  font-size: 14px;
+  margin: 0 0 0 0px;
+  padding-top: 12px;
+  padding-left: 145px;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  float: left;
+}
+
+.work-box{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.frame0 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(210,210,210) rgb(240,240,240) rgb(240,240,240) rgb(210,210,210);
+  margin-top: 1.5px;
+  margin-bottom: 1.5px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.frame {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(210,210,210) rgb(240,240,240) rgb(240,240,240) rgb(210,210,210);
+  margin-top: 1.5px;
+  margin-bottom: 1.5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 12px 10px;
+}
+
+.frame table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: keep-all;
+}
+
+.frame img {
+  max-width: 100%;
+  box-sizing: border-box;
+
+}
+
+.box{
+  padding: 12px 12px 12px 12px
+}
+
+#table-row {
+  display: table-row;
+}
+
+#table-cell {
+  display: table-cell;
+  vertical-align:middle;
+  text-align:center;
+}
+
+div {
+  display: inline-block;
+}
+
+p {
+  margin: 0 0 0 0;
+}
