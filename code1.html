@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>T</title>
+
+	<style>
+	html, body {
+		background: black;
+	}
+
+	#tumblr_controls, .tmblr-iframe{display:none !important;}
+
+	</style>
+
+	<script src="jquery.min.js"></script>
+
+	<script src="http://static.tumblr.com/emudrtm/J38og18wy/processing.js"></script>
+
+	<script type="application/processing" data-processing-target="ColorBlock1">
+	int Y_AXIS = 3;
+	int X_AXIS = 1;
+
+	color c1, c2;
+
+	class Walker {
+		int aa, bb, cc, dd, ee, ff;
+
+		Walker() {
+			aa = 255/2;
+			bb = 255/2;
+			cc = 255/2;
+			dd = 255/2;
+			ee = 255/2;
+			ff = 255/2;
+		}
+
+		void step() {
+			int stepaa = int(random(-5,5));
+			int stepbb = int(random(-5,5));
+			int stepcc = int(random(-5,5));
+			int stepdd = int(random(-5,5));
+			int stepee = int(random(-5,5));
+			int stepff = int(random(-5,5));
+
+			aa += stepaa;
+			bb += stepbb;
+			cc += stepcc;
+			dd += stepdd;
+			ee += stepee;
+			ff += stepff;
+
+			aa = constrain(aa,0,255);
+			bb = constrain(bb,0,255);
+			cc = constrain(cc,0,255);
+			dd = constrain(dd,0,255);
+			ee = constrain(ee,0,255);
+			ff = constrain(ff,0,255);
+
+			c1 = color(aa, bb, cc, 5);
+			c2 = color(dd, ee, ff, 5);
+
+		}
+	}
+
+	Walker w;
+
+	void setup() {
+		size(screen.width/3,screen.height/3);
+		frameRate(240);
+		w = new Walker();
+	}
+
+	void draw() {
+		w.step();
+
+		setGradient(0, 0, width, height, c1, c2, Y_AXIS);
+	}
+
+	void setGradient(int x, int y, float w, float h, color c1, color c2, int axis) {
+		noFill();
+
+		if (axis == Y_AXIS) {
+			for (int i = y; i <= y+h; i++) {
+				float inter = map(i, y, y+h, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(x, i, x+w, i);
+			}
+		}
+
+		else if (axis == X_AXIS) {
+			for (int i = x; i <= x+w; i++) {
+				float inter = map(i, x, x+w, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(i, y, i, y+h);
+			}
+		}
+	}
+	</script>
+
+	<script type="application/processing" data-processing-target="ColorBlock2">
+	int Y_AXIS = 3;
+	int X_AXIS = 1;
+
+	color c1, c2;
+
+	class Walker {
+		int aa, bb, cc, dd, ee, ff;
+
+		Walker() {
+			aa = 255/2;
+			bb = 255/2;
+			cc = 255/2;
+			dd = 255/2;
+			ee = 255/2;
+			ff = 255/2;
+		}
+
+		void step() {
+			int stepaa = int(random(-5,5));
+			int stepbb = int(random(-5,5));
+			int stepcc = int(random(-5,5));
+			int stepdd = int(random(-5,5));
+			int stepee = int(random(-5,5));
+			int stepff = int(random(-5,5));
+
+			aa += stepaa;
+			bb += stepbb;
+			cc += stepcc;
+			dd += stepdd;
+			ee += stepee;
+			ff += stepff;
+
+			aa = constrain(aa,0,255);
+			bb = constrain(bb,0,255);
+			cc = constrain(cc,0,255);
+			dd = constrain(dd,0,255);
+			ee = constrain(ee,0,255);
+			ff = constrain(ff,0,255);
+
+			c1 = color(aa, bb, cc, 5);
+			c2 = color(dd, ee, ff, 5);
+
+		}
+	}
+
+	Walker w;
+
+	void setup() {
+		size(screen.width/6,screen.height-40);
+		frameRate(240);
+		w = new Walker();
+	}
+
+	void draw() {
+		w.step();
+
+		setGradient(0, 0, width, height, c1, c2, Y_AXIS);
+	}
+
+	void setGradient(int x, int y, float w, float h, color c1, color c2, int axis) {
+		noFill();
+
+		if (axis == Y_AXIS) {
+			for (int i = y; i <= y+h; i++) {
+				float inter = map(i, y, y+h, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(x, i, x+w, i);
+			}
+		}
+
+		else if (axis == X_AXIS) {
+			for (int i = x; i <= x+w; i++) {
+				float inter = map(i, x, x+w, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(i, y, i, y+h);
+			}
+		}
+	}
+	</script>
+
+	<script type="application/processing" data-processing-target="ColorBlock3">
+	int Y_AXIS = 3;
+	int X_AXIS = 1;
+
+	color c1, c2;
+
+	class Walker {
+		int aa, bb, cc, dd, ee, ff;
+
+		Walker() {
+			aa = 255/2;
+			bb = 255/2;
+			cc = 255/2;
+			dd = 255/2;
+			ee = 255/2;
+			ff = 255/2;
+		}
+
+		void step() {
+			int stepaa = int(random(-5,5));
+			int stepbb = int(random(-5,5));
+			int stepcc = int(random(-5,5));
+			int stepdd = int(random(-5,5));
+			int stepee = int(random(-5,5));
+			int stepff = int(random(-5,5));
+
+			aa += stepaa;
+			bb += stepbb;
+			cc += stepcc;
+			dd += stepdd;
+			ee += stepee;
+			ff += stepff;
+
+			aa = constrain(aa,0,255);
+			bb = constrain(bb,0,255);
+			cc = constrain(cc,0,255);
+			dd = constrain(dd,0,255);
+			ee = constrain(ee,0,255);
+			ff = constrain(ff,0,255);
+
+			c1 = color(aa, bb, cc, 5);
+			c2 = color(dd, ee, ff, 5);
+
+		}
+	}
+
+	Walker w;
+
+	void setup() {
+		size(screen.height/3,screen.width/3);
+		frameRate(240);
+		w = new Walker();
+	}
+
+	void draw() {
+		w.step();
+
+		setGradient(0, 0, width, height, c1, c2, Y_AXIS);
+	}
+
+	void setGradient(int x, int y, float w, float h, color c1, color c2, int axis) {
+		noFill();
+
+		if (axis == Y_AXIS) {
+			for (int i = y; i <= y+h; i++) {
+				float inter = map(i, y, y+h, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(x, i, x+w, i);
+			}
+		}
+
+		else if (axis == X_AXIS) {
+			for (int i = x; i <= x+w; i++) {
+				float inter = map(i, x, x+w, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(i, y, i, y+h);
+			}
+		}
+	}
+	</script>
+
+	<script type="application/processing" data-processing-target="ColorBlock4">
+	int Y_AXIS = 2;
+	int X_AXIS = 3;
+	color b1, b2, c1, c2;
+
+	class Walker {
+		int aa, bb, cc, dd;
+
+		Walker() {
+			aa = 255/2;
+			bb = 255/2;
+			cc = 255/2;
+			dd = 255/2;
+		}
+
+		void step() {
+			int stepaa = int(random(-5,5));
+			int stepbb = int(random(-5,5));
+			int stepcc = int(random(-5,5));
+			int stepdd = int(random(-5,5));
+
+			aa += stepaa;
+			bb += stepbb;
+			cc += stepcc;
+			dd += stepdd;
+
+			aa = constrain(aa,0,255);
+			bb = constrain(bb,0,255);
+			cc = constrain(cc,0,255);
+			dd = constrain(dd,0,255);
+
+
+			b1 = color(aa,0,bb);
+			b2 = color(cc,0,dd);
+			c1 = color(aa,0,bb);
+			c2 = color(cc,0,dd);
+		}
+	}
+
+	Walker w;
+
+	void setup() {
+		size(screen.width/6,screen.height/6);
+		w = new Walker();
+	}
+
+	void draw() {
+		w.step();
+
+		//BG
+		setGradient(0, 0, width/2, height, b1, b2, X_AXIS);
+		setGradient(width/2, 0, width/2, height, b2, b1, X_AXIS);
+		//FG
+		setGradient(width*1/11, height*1/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*3/11, height*1/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*5/11, height*1/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*7/11, height*1/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*9/11, height*1/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+
+		setGradient(width*1/11, height*3/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*3/11, height*3/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*5/11, height*3/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*7/11, height*3/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*9/11, height*3/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+
+		setGradient(width*1/11, height*5/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*3/11, height*5/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*5/11, height*5/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*7/11, height*5/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*9/11, height*5/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+
+		setGradient(width*1/11, height*7/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*3/11, height*7/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*5/11, height*7/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*7/11, height*7/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*9/11, height*7/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+
+	}
+
+	void setGradient(int x, int y, float w, float h, color c1, color c2, int axis) {
+		noFill();
+
+		if (axis == Y_AXIS) {
+			for (int i = y; i <= y+h; i++) {
+				float inter = map(i, y, y+h, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(x, i, x+w, i);
+			}
+		}
+		else if (axis == X_AXIS) {
+			for (int i = x; i <= x+w; i++) {
+				float inter = map(i, x, x+w, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(i, y, i, y+h);
+			}
+		}
+	}
+	</script>
+
+	<script type="application/processing" data-processing-target="ColorBlock5">
+	int Y_AXIS = 2;
+	int X_AXIS = 3;
+	color b1, b2, c1, c2;
+
+	class Walker {
+		int aa, bb, cc, dd;
+
+		Walker() {
+			aa = 255/2;
+			bb = 255/2;
+			cc = 255/2;
+			dd = 255/2;
+		}
+
+		void step() {
+			int stepaa = int(random(-5,5));
+			int stepbb = int(random(-5,5));
+			int stepcc = int(random(-5,5));
+			int stepdd = int(random(-5,5));
+
+			aa += stepaa;
+			bb += stepbb;
+			cc += stepcc;
+			dd += stepdd;
+
+			aa = constrain(aa,0,255);
+			bb = constrain(bb,0,255);
+			cc = constrain(cc,0,255);
+			dd = constrain(dd,0,255);
+
+
+			b1 = color(0,aa,bb);
+			b2 = color(0,cc,dd);
+			c1 = color(0,aa,bb);
+			c2 = color(0,cc,dd);
+		}
+	}
+
+	Walker w;
+
+	void setup() {
+		size(screen.height*2/9,screen.height*2/9);
+		frameRate(240);
+		w = new Walker();
+	}
+
+	void draw() {
+		w.step();
+
+		//BG
+		setGradient(0, 0, width/2, height, b1, b2, X_AXIS);
+		setGradient(width/2, 0, width/2, height, b2, b1, X_AXIS);
+		//FG
+		setGradient(0, 0, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*1/11, 0, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*2/11, 0, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*3/11, 0, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*4/11, 0, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*5/11, 0, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*6/11, 0, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*7/11, 0, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*8/11, 0, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*9/11, 0, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*10/11, 0, width*1/11, height*1/9, c1, c2, X_AXIS);
+
+		setGradient(0, height*1/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*1/11, height*1/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*2/11, height*1/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*3/11, height*1/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*4/11, height*1/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*5/11, height*1/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*6/11, height*1/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*7/11, height*1/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*8/11, height*1/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*9/11, height*1/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*10/11, height*1/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+
+		setGradient(0, height*2/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*1/11, height*2/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*2/11, height*2/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*3/11, height*2/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*4/11, height*2/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*5/11, height*2/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*6/11, height*2/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*7/11, height*2/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*8/11, height*2/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*9/11, height*2/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*10/11, height*2/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+
+		setGradient(0, height*3/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*1/11, height*3/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*2/11, height*3/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*3/11, height*3/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*4/11, height*3/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*5/11, height*3/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*6/11, height*3/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*7/11, height*3/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*8/11, height*3/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*9/11, height*3/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*10/11, height*3/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+
+		setGradient(0, height*4/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*1/11, height*4/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*2/11, height*4/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*3/11, height*4/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*4/11, height*4/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*5/11, height*4/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*6/11, height*4/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*7/11, height*4/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*8/11, height*4/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*9/11, height*4/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*10/11, height*4/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+
+		setGradient(0, height*5/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*1/11, height*5/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*2/11, height*5/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*3/11, height*5/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*4/11, height*5/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*5/11, height*5/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*6/11, height*5/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*7/11, height*5/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*8/11, height*5/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*9/11, height*5/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*10/11, height*5/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+
+		setGradient(0, height*6/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*1/11, height*6/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*2/11, height*6/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*3/11, height*6/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*4/11, height*6/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*5/11, height*6/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*6/11, height*6/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*7/11, height*6/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*8/11, height*6/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*9/11, height*6/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*10/11, height*6/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+
+		setGradient(0, height*7/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*1/11, height*7/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*2/11, height*7/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*3/11, height*7/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*4/11, height*7/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*5/11, height*7/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*6/11, height*7/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*7/11, height*7/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*8/11, height*7/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*9/11, height*7/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*10/11, height*7/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+
+		setGradient(0, height*8/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*1/11, height*8/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*2/11, height*8/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*3/11, height*8/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*4/11, height*8/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*5/11, height*8/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*6/11, height*8/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*7/11, height*8/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*8/11, height*8/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+		setGradient(width*9/11, height*8/9, width*1/11, height*1/9, c1, c2, Y_AXIS);
+		setGradient(width*10/11, height*8/9, width*1/11, height*1/9, c1, c2, X_AXIS);
+
+	}
+
+	void setGradient(int x, int y, float w, float h, color c1, color c2, int axis) {
+		noFill();
+
+		if (axis == Y_AXIS) {
+			for (int i = y; i <= y+h; i++) {
+				float inter = map(i, y, y+h, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(x, i, x+w, i);
+			}
+		}
+		else if (axis == X_AXIS) {
+			for (int i = x; i <= x+w; i++) {
+				float inter = map(i, x, x+w, 0, 1);
+				color c = lerpColor(c1, c2, inter);
+				stroke(c);
+				line(i, y, i, y+h);
+			}
+		}
+	}
+	</script>
+
+	<script type="application/processing" data-processing-target="TextBlock1">
+	void setup() {
+		size(screen.width/16,screen.height/16, JAVA2D);
+		frameRate(1);
+		PFont f;
+		f = loadFont("Arial-Black-60.vlw");
+		textFont(f);
+		textAlign(CENTER,CENTER);
+		background(0);
+	}
+
+	String [] myWords1  = {
+		"a","b","c","d","e","f","g","h","i","j","k","l","m","n",
+		"o","p","q","r","s","t","u","v","w","x","y","z",""
+	};
+
+	String [] myWords2  = {
+		"a","e","i","o","u"
+	};
+
+	void draw(){
+		size(screen.width/16,screen.height/16);
+		background(0);
+
+		fill(255);
+		textSize(screen.height/25);
+		text(myWords1[int(random(26))], width*60/250, height*125/250 );
+
+		fill(255);
+		textSize(screen.height/25);
+		text(myWords2[int(random(5))], width*125/250, height*125/250 );
+
+		fill(255);
+		textSize(screen.height/25);
+		text(myWords1[int(random(26))], width*190/250, height*125/250 );
+
+	}
+	</script>
+</head>
+
+<!------------------------------------------------>
+
+<body>
+
+	<!--nav--------------------------->
+
+	  <div id="nav">
+	    <table><tbody><tr>
+	      <td class="frame0">
+	        <div id="name">
+	          <ul><a href="index.html">Rawiruj Suradin</a></ul>
+	          <ul></ul>
+	        </div>
+	      </td></tr>
+
+	      <tr><td class="frame0">
+	        <p><a href="works.html" target="_self">works</a></p>
+	      </td></tr>
+
+	      <tr><td class="frame0">
+	        <p><a href="CV.html" target="_self">cv</a></p>
+	      </td></tr>
+
+	      <tr><td class="frame0">
+	        <p><a href="contact.html" target="_self">contact</a></p>
+	      </td></tr>
+	    </tbody></table>
+	  </div>
+
+	<!--nav-work--------------------------->
+
+	  <div id="nav-work">
+	      <div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="0.html" target="_self">0</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="gif.html" target="_self">gif</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.001.html" target="_self">p.001</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.002.html" target="_self">p.002</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.003.html" target="_self">p.003</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.004.html" target="_self">p.004</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.005.html" target="_self">p.005</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.006.html" target="_self">p.006</a></p>
+	        </div>
+	      </div>
+	      <div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.010.html" target="_self">p.010</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.011.html" target="_self">p.011</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.012.html" target="_self">p.012</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.013.html" target="_self">p.013</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.014.html" target="_self">p.014</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="p.015.html" target="_self">p.015</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="code1.html" target="_self">code1</a></p>
+	        </div>
+	      </div>
+
+	      <div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="exh.001.html" target="_self">exh.001</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="exh.002.html" target="_self">exh.002</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="exh.003.html" target="_self">exh.003</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="exh.004.html" target="_self">exh.004</a></p>
+	        </div>
+	        <div class="frame0">
+	          <p class="work-box"><a href="exh.005.html" target="_self">exh.005</a></p>
+	        </div>
+	      </div>
+
+	  </div>
+
+	  <!--content-work--------------------------->
+
+	<div align="center">
+
+		<div id="parent"><div id="child">
+
+			<table><tbody><tr>
+
+				<td>
+					<div align="right" class="post">
+						<canvas id="ColorBlock4"> </canvas>
+					</div>
+
+					<div class="post">
+						<canvas id="ColorBlock1"> </canvas>
+					</div>
+
+					<div align="right" class="post">
+						<canvas id="TextBlock1"> </canvas>
+					</div>
+
+				</td>
+
+				<td><div class="post">
+					<canvas id="ColorBlock2"> </canvas>
+				</div></td>
+
+				<td>
+					<div class="post">
+						<canvas id="ColorBlock3"> </canvas>
+					</div>
+
+					<div align="left" class="post">
+						<canvas id="ColorBlock5"> </canvas>
+					</div>
+
+				</td>
+
+			</tr></tbody></table>
+
+
+		</div></div>
+
+	</body>
+	</html>
