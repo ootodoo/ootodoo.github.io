@@ -6,55 +6,58 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <title>T</title>
 
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="jquery.cycle.all.js"></script>
+
   <script type="text/javascript">
-  function toggle(it) {
-    if (it.width == 300)
-    {it.width = 450;}
-    else
-    {it.width = 300;}
-  }
-  </script>
+  $(document).ready(function(){
+    $('#s1').cycle({
+      fx:'fade',
+      speed:'2000',
+      timeout: 0,
+      next:'#next', prev:'#prev'});
+    });
+    </script>
 
-</head>
+  </head>
 
-<!------------------------------------------------->
+  <!------------------------------------------------->
 
-<body>
+  <body>
 
-<!--nav--------------------------->
+    <!--nav--------------------------->
 
     <div class="nav">
       <table><tbody><tr>
         <td class="frame0">
           <div id="name">
-            <ul><a href="index.html">Rawiruj Suradin</a></ul>
-            <ul></ul>
-          </div>
-        </td></tr>
+            <ul><a href="index.html">
+              <p><ul>Rawiruj</ul>
+                <ul>Suradin</ul></p>
+              </a></ul>
+            </div>
+          </td></tr>
 
-        <tr><td class="frame0" id="pressed">
-          <p><a href="works.html" target="_self" id="underline">works</a></p>
-        </td></tr>
+          <tr><td class="frame0" id="pressed">
+            <p><a href="works.html" target="_self" id="underline">works</a></p>
+          </td></tr>
 
-        <tr><td class="frame0">
-          <p><a href="CV.html" target="_self">cv</a></p>
-        </td></tr>
+          <tr><td class="frame0">
+            <p><a href="CV.html" target="_self">cv</a></p>
+          </td></tr>
 
-        <tr><td class="frame0">
-          <p><a href="contact.html" target="_self">contact</a></p>
-        </td></tr>
-      </tbody></table>
-    </div>
+          <tr><td class="frame0">
+            <p><a href="contact.html" target="_self">contact</a></p>
+          </td></tr>
+        </tbody></table>
+      </div>
 
-<!--nav-work--------------------------->
+      <!--nav-work--------------------------->
 
-    <div class="nav-work">
+      <div class="nav-work">
         <div>
           <div class="frame0">
-            <p class="work-box"><a href="0.html" target="_self">0</a></p>
-          </div>
-          <div class="frame0">
-            <p class="work-box"><a href="gif.html" target="_self">gif</a></p>
+            <p class="work-box"><a href="sketch_gif.html" target="_self">sketch_gif</a></p>
           </div>
           <div class="frame0">
             <p class="work-box"><a href="p.001.html" target="_self">p.001</a></p>
@@ -88,61 +91,98 @@
           <div class="frame0">
             <p class="work-box"><a href="p.013.html" target="_self">p.013</a></p>
           </div>
-          <div class="frame0">
-            <p class="work-box"><a href="p.014.html" target="_self">p.014</a></p>
-          </div>
           <div class="frame0" id="pressed">
             <p class="work-box"><a href="p.015.html" target="_self" id="underline">p.015</a></p>
           </div>
           <div class="frame0">
-            <p class="work-box"><a href="code1.html" target="_self">code1</a></p>
+            <p class="work-box"><a href="sketch_161102a_1_print.html" target="_self">sketch_161102a<br class="rwd-break">_1_print</a></p>
+          </div>
+          <div class="frame0">
+            <p class="work-box"><a href="sketch_161104_10.html" target="_self">sketch_161104_10</a></p>
+          </div>
+          <div class="frame0">
+            <p class="work-box"><a href="sketch_161104_13.html" target="_self">sketch_161104_13</a></p>
+          </div>
+          <div class="frame0">
+            <p class="work-box"><a href="sketch_161104_14.html" target="_self" >sketch_161104_14</a></p>
+          </div>
+          <div class="frame0">
+            <p class="work-box"><a href="sketch_161115e1.html" target="_self" >sketch_161115e1</a></p>
+          </div>
+          <div class="frame0">
+            <p class="work-box"><a href="sketch_170523a_2x3.html" target="_self">sketch_170523a<br class="rwd-break">_2x3</a></p>
+          </div>
+          <div class="frame0">
+            <p class="work-box"><a href="d.001.html" target="_self">d.001</a></p>
+          </div>
+          <div class="frame0">
+            <p class="work-box"><a href="d.002.html" target="_self">d.002</a></p>
           </div>
         </div>
 
         <div>
           <div class="frame0">
-            <p class="work-box"><a href="exh.001.html" target="_self">exh.001</a></p>
+            <p class="work-box"><a href="ex.001.html" target="_self">ex.001</a></p>
           </div>
           <div class="frame0">
-            <p class="work-box"><a href="exh.002.html" target="_self">exh.002</a></p>
+            <p class="work-box"><a href="ex.002.html" target="_self">ex.002</a></p>
           </div>
           <div class="frame0">
-            <p class="work-box"><a href="exh.003.html" target="_self">exh.003</a></p>
+            <p class="work-box"><a href="ex.003.html" target="_self">ex.003</a></p>
           </div>
           <div class="frame0">
-            <p class="work-box"><a href="exh.004.html" target="_self">exh.004</a></p>
+            <p class="work-box"><a href="ex.004.html" target="_self">ex.004</a></p>
           </div>
           <div class="frame0">
-            <p class="work-box"><a href="exh.005.html" target="_self">exh.005</a></p>
+            <p class="work-box"><a href="ex.005.html" target="_self">ex.005</a></p>
           </div>
         </div>
 
-    </div>
-
-<!--content-work--------------------------->
-
-  <div id="content-work" align="center">
-
-    <div>
-      <div class="frame">
-        <img  src="https://farm5.staticflickr.com/4388/36008773784_e9b54ef1fc_h.jpg" width="300px" onclick="toggle(this)">
       </div>
 
-      <div class="frame">
-        <p><img  src="https://farm5.staticflickr.com/4407/36842940705_3188150602_h.jpg" width="300px" onclick="toggle(this)"></p>
+      <!--content-work--------------------------->
+
+      <script type="text/javascript">
+      <!--
+      var ary=[
+        'https://farm5.staticflickr.com/4388/36008773784_e9b54ef1fc_h.jpg',
+        'https://farm5.staticflickr.com/4407/36842940705_3188150602_h.jpg',
+        'https://farm5.staticflickr.com/4400/36672507512_b6389e42be_h.jpg',
+        'https://farm5.staticflickr.com/4438/36034067953_1e7bb407a8_h.jpg'
+      ];
+
+      function Slide(id,ary,nu){
+        document.getElementById(id).src=ary[nu];
+        Slide[id]={nu:nu};  // create a function Slide[id] object with a property of nu recording the current image number
+      }
+
+      function nextImage(id,ary,ud){
+        var nu=(Slide[id]&&Slide[id].nu?Slide[id].nu:0)+ud;  // if the function Slide[id] object exists use that or use 0 and add ud
+        Slide(id,ary,Math.min(Math.max(nu,0),ary.length-1));
+      }
+
+      //-->
+      </script>
+
+      <div id="content-work">
+        <div class="frame" style="font-size: 16px;">
+          <img src="https://farm5.staticflickr.com/4388/36008773784_e9b54ef1fc_h.jpg" name="slide" height="500" id="slideshow"/>
+
+          <br>
+          <div class="hand" name="previous" height="46" width="46"  onmouseup="nextImage('slideshow',ary,-1);" id="previous"> < &nbsp;</div>
+          <div class="hand" name="next" height="46" width="46"  onmouseup="nextImage('slideshow',ary,1)" id="next"> > </div>
+          <!----
+          <br>
+          <a class="slide1 hand" onclick="javascript:Slide('slideshow',ary,0);">1 &nbsp;</a>
+          <a class="slide2 hand" onclick="javascript:Slide('slideshow',ary,1);">2 &nbsp;</a>
+          <a class="slide3 hand" onclick="javascript:Slide('slideshow',ary,2);">3 &nbsp;</a>
+          <a class="slide4 hand" onclick="javascript:Slide('slideshow',ary,3);">4 &nbsp;</a>
+          ---->
+        </div>
       </div>
 
-      <div class="frame">
-        <p><img  src="https://farm5.staticflickr.com/4400/36672507512_b6389e42be_h.jpg" width="300px" onclick="toggle(this)"></p>
-      </div>
-    </div>
 
-    <table><tbody><tr>
-      <td class="frame">
-        <img  src="https://farm5.staticflickr.com/4438/36034067953_1e7bb407a8_h.jpg" width="300px" onclick="toggle(this)">
-      </td>
+      <!----------------------------------->
 
-    </tr></tbody></table>
-  </div>
-</body>
-</html>
+    </body>
+    </html>
